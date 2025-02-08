@@ -1,0 +1,133 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Courier New', Courier, monospace;
+  overflow: hidden;
+  background-color: black;
+}
+
+#background-gif {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: -1;
+}
+
+
+#video-background::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-image: repeating-linear-gradient(to bottom, rgba(255, 255, 255, 0.05) 0, rgba(255, 255, 255, 0.05) 1px, transparent 1px, transparent 2px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+#myVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.top-left {
+  top: 0;
+  left: 0;
+}
+
+.top-right {
+  top: 0;
+  right: 0;
+}
+
+.bottom-left {
+  bottom: 0;
+  left: 0;
+}
+
+.bottom-right {
+  bottom: 0;
+  right: 0;
+}
+
+#blurred-box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 40%;
+  background-color: rgba(255, 255, 255, 0);
+  border-radius: 20px;
+  border: 2px solid rgba(255, 255, 255, 0);
+  box-shadow: 0 0 10px rgba(100, 100, 100, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+  display: block;
+  padding: 20px;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+#blurred-box:hover {
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+#blurred-box img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin-bottom: 20px;
+}
+
+.links {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  z-index: 1001;
+}
+
+.links a {
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+  color: #ffffff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.links a:hover {
+  color: #ff00ff;
+}
+
+.links a i {
+  margin-right: 5px;
+  font-size: 24px;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+.user-description {
+  margin-bottom: 20px;
+}
+
+.user-description p {
+  margin: 0;
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.user-description:hover p {
+  background-color: rgba(255, 255, 255, 0.2);
+}
